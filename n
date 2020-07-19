@@ -1,0 +1,26 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Redirect",
+      "warning_code": 18,
+      "fingerprint": "26969ad3e894fda6b6754f957e4cafba352c5db03d77a10dc2ef0cf7500c8bc6",
+      "check_name": "Redirect",
+      "message": "Possible unprotected redirect",
+      "file": "app/controllers/couriers_controller.rb",
+      "line": 39,
+      "link": "https://brakemanscanner.org/docs/warning_types/redirect/",
+      "code": "redirect_to(Courier.find(params[:id]))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "CouriersController",
+        "method": "update"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2020-05-07 20:19:42 +0300",
+  "brakeman_version": "4.8.1"
+}

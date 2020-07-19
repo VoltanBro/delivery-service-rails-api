@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Track_number</th>
+    <th>Status</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @packages.each do |package| %> <!--foreach for all couriers-->
+
+    <tr>
+      <td><%= package.tracking_number %></td>
+      <td><%= package.delivery_status %></td>
+    </tr>
+  <% end %>
+
+</table>
+<%= link_to 'Back to list', couriers_path %>

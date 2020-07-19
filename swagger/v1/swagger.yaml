@@ -1,0 +1,122 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  bearerAuth: []
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
+paths:
+  "/api/v1/sign_in/":
+    post:
+      summary: Login courier
+      tags:
+      - Couriers
+      security:
+      - bearerAuth: []
+      parameters: []
+      responses:
+        '201':
+          description: OK
+          content: {}
+        '403':
+          description: Forbidden
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                courier:
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+  "/api/v1/couriers/{id}/packages":
+    get:
+      summary: Assigned packages
+      tags:
+      - Couriers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+  "/api/v1/couriers/{id}/packages/{id_package}?status={delivery_status}":
+    patch:
+      summary: Pickuped package
+      tags:
+      - Couriers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id_package
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: delivery_status
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+  "/api/v1/packages/{id}/confirm":
+    get:
+      summary: Generate delivery confirm url
+      tags:
+      - Couriers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+  "/api/v1/packages/{id}/confirm_delivery":
+    post:
+      summary: To confirm package delivery
+      tags:
+      - Couriers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content: {}

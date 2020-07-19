@@ -1,0 +1,55 @@
+
+<p><%= form_for [@courier, @package] do |f| %></p>
+      <p>
+        <%= f.label :track_number %><br>
+        <%= f.text_field :tracking_number %>
+      </p>
+
+    <!--  Enable for show button status - In progress / Delivered
+    <p>
+      <%= f.label :status  %><br>
+      <%= f.check_box :delivery_status %>
+    </p>
+    -->
+
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @courier.name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @courier.email %>  
+</p>
+
+	<h3><%= link_to 'Edit', edit_courier_path(@courier) %> |
+	<%= link_to 'Back to list', couriers_path %></h3>
+  <ol>
+  <% @courier.packages.each do |package| %> <!--foreach for all couriers-->
+
+
+    <p>
+
+      <li> <td><%= package.tracking_number %></td>
+        <td><% if package.delivery_status %>
+            Delivered
+          <% else %>
+            In progress
+          <% end %></td>
+      </li>
+   </p>
+
+
+
+
+
+
+
+  <% end %> </ol>
+

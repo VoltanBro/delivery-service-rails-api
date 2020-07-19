@@ -1,0 +1,17 @@
+<h1>New order</h1>
+<%= form_with scope: :packages, url: packages_path, local: true do |fcorm| %>
+  <p>
+    <%= form.label :tracking_number %><br>
+    <%= form.text_field :tracking_number %>
+  </p>
+
+  <p>
+    <%= form.label :delivery_status %><br>
+    <%= form.check_box :delivery_status %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  <%= link_to 'Back to list', couriers_path %>
+<% end %>

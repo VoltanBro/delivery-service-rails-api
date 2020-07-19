@@ -1,0 +1,34 @@
+<h1>Control panel of Couriers</h1>
+
+
+<form>
+  <button><%= link_to 'New courier', new_courier_path %></button>
+  <button><%= link_to 'ActiveAdmin', admin_root_path %></button>
+</form>
+
+
+<% if @couriers.size > 0 %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+<% end %>
+
+<% @couriers.each do |couriers| %> <!--foreach for all couriers-->
+
+  <tr>
+
+    <td><%= couriers.name %></td>
+    <td><%= couriers.email %></td>
+    <td><%= link_to 'Show', courier_path(couriers) %></td>
+    <td><%= link_to 'Edit', edit_courier_path(couriers) %></td>
+    <td><%= link_to 'Delete', courier_path(couriers),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'} %></td>
+  </tr>
+<% end %>
+
+</table>
+
