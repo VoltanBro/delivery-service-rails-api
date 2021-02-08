@@ -24,7 +24,7 @@ gem "cancancan"
 gem "draper"
 gem "pundit"
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications
-gem "carrierwave", "~> 1.0"
+gem "carrierwave", "~> 1.3"
 gem "utf8-cleaner"
 # Use Puma as the app server
 gem "puma", "~> 4.3.3"
