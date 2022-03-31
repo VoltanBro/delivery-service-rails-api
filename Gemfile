@@ -27,7 +27,7 @@ gem "pundit"
 gem "carrierwave", "~> 1.0"
 gem "utf8-cleaner"
 # Use Puma as the app server
-gem "puma", "~> 4.3.3"
+gem "puma", "~> 4.3.12"
 # Use SCSS for stylesheets
 gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
